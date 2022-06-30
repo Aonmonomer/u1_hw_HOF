@@ -5,6 +5,12 @@ function printNums(nums) {
    *  Using .forEach, add each number in the nums array to a new array.
    * @param nums => [1,2,3,4]
    */
+  const newArray = []
+  nums.forEach((element) => {
+    newArray.push(element)
+    // return newArray
+  })
+  return newArray
 }
 
 function returnSums(nums) {
@@ -13,6 +19,14 @@ function returnSums(nums) {
    * to a new array and return the new array
    * @param nums => [1,2,3,4,5]
    */
+  const newArray = []
+  let sum = 0
+  nums.forEach((n, index) => {
+    // sum = sum + n + index
+    newArray.push(n + index)
+    //return newArray
+  })
+  return newArray
 }
 
 function returnTotal(objs) {
@@ -21,6 +35,11 @@ function returnTotal(objs) {
    * The key for each object will be n
    * @param objs => [{n:1}]
    */
+  let totalSum = 0
+  objs.forEach((num) => {
+    totalSum += num.n
+  })
+  return totalSum
 }
 
 function printMoney(decimals) {
@@ -33,6 +52,10 @@ function printMoney(decimals) {
    * }
    * Hint: Not all decimals have two places, make sure to return each decimal with the proper decimal places. .toFixed may be useful :)
    */
+  const formatToDollar = decimals.map((toDollar) => {
+    return '$' + toDollar.toFixed(2)
+  })
+  return formatToDollar
 }
 
 function returnAllTrueValues(values) {
@@ -40,6 +63,11 @@ function returnAllTrueValues(values) {
    * @param values => [{name: 'Joe', happy:false}]
    * Using .filter, return an array of objects where happy equals true
    */
+
+  const trueHappy = values.filter((happyTrueOrFalse) => {
+    return happyTrueOrFalse.happy === true
+  })
+  return trueHappy
 }
 
 function addTwo(nums) {
@@ -50,6 +78,10 @@ function addTwo(nums) {
    */
   //   3
   //   4 => 7
+  const totalSum = nums.reduce((accumulator, value) => {
+    return accumulator + (value + 2)
+  }, 0)
+  return totalSum
 }
 
 function joinStrings(strings) {
@@ -57,6 +89,10 @@ function joinStrings(strings) {
    * @param strings => ['g', 'f', 'z']
    * Using .reduce, return a new string containing each string from the strings array.
    */
+  const newStrings = strings.reduce((accumulator, value) => {
+    return accumulator + value
+  })
+  return newStrings
 }
 
 //Bonus
@@ -66,6 +102,12 @@ function sortObjectsByValue(objs) {
    * Using .sort, sort the array of objects by the value key in ascending order
    * .sort documentation https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/sort
    */
+  //   const newArr = []
+  //   const ascArr = objs.map((value) => {
+  //     const newArr = objs.value
+  //   })
+  //   newArr.sort()
+  //   return newArr
 }
 
 module.exports = {
